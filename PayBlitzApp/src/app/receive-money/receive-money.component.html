@@ -1,0 +1,47 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <ion-title class="receive-header">Get Paid</ion-title>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="2"></ion-col>
+    <ion-col size="8" class="centered">
+      <ion-item lines="none">
+        <ion-input type="number" placeholder="Amount..." [(ngModel)]="receveiveAmount"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2"></ion-col>
+  </ion-row>
+
+  <ion-row class="m-2">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8" class="centered">
+      <ion-button id="open-modal" expand="block">
+        <ion-title>PayMe</ion-title>
+      </ion-button>
+    </ion-col>
+    <ion-col size="2"></ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+          <ion-button (click)="presentAlert()" [strong]="true">SCAN COMPLETE</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="QR-container">
+        <ion-title class="m-2 bolded">Customer can now scan</ion-title>
+      <qrcode [qrdata]="'Your data string'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </ion-content>
+  </ng-template>
+</ion-modal>

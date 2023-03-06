@@ -24,3 +24,35 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.centered{
+    text-align: center;
+}
+
+.bolded{
+    font-weight: bold;
+}
+
+.spaced-letter-2{
+    letter-spacing: 2px;
+}
+
+.font-size-50{
+    font-size: 50px;
+}
+
+.font-size-12{
+    font-size: 12px;
+}
+
+.font-size-15{
+    font-size: 15px;
+}
+
+.w-100{
+    width: 100% !important;
+}
+
+.m-2{
+    margin:2rem !important;
+}

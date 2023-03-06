@@ -1,5 +1,12 @@
+@import './../colors.scss';
+
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  //--background: var(--ion-item-background, var(--ion-background-color, #fff));
+  --background: $dark-blue;
+}
+
+.background {
+  --background: $dark-blue;
 }
 
 ion-menu.md ion-content {
@@ -23,13 +30,12 @@ ion-menu.md ion-note {
 }
 
 ion-menu.md ion-list#inbox-list {
-  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
+  border-bottom: 1px solid var(--ion-color-step-150, $iron);
 }
 
 ion-menu.md ion-list#inbox-list ion-list-header {
   font-size: 22px;
   font-weight: 600;
-
   min-height: 20px;
 }
 
@@ -38,7 +44,7 @@ ion-menu.md ion-list#labels-list ion-list-header {
 
   margin-bottom: 18px;
 
-  color: #757575;
+  color: $lynch;
 
   min-height: 26px;
 }
@@ -46,7 +52,13 @@ ion-menu.md ion-list#labels-list ion-list-header {
 ion-menu.md ion-item {
   --padding-start: 10px;
   --padding-end: 10px;
-  border-radius: 4px;
+}
+
+.ImageLogo{
+  height: 100px;
+  width: 100px;
+  margin-left: 30%;
+  border-radius: 50%;
 }
 
 ion-menu.md ion-item.selected {
@@ -58,7 +70,7 @@ ion-menu.md ion-item.selected ion-icon {
 }
 
 ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+  color: white;
 }
 
 ion-menu.md ion-item ion-label {
@@ -87,10 +99,10 @@ ion-menu.ios ion-item {
 ion-menu.ios ion-item.selected ion-icon {
   color: var(--ion-color-primary);
 }
-
+ 
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
-  color: #73849a;
+  color: $lynch;
 }
 
 ion-menu.ios ion-list#labels-list ion-list-header {
@@ -111,9 +123,39 @@ ion-note {
   display: inline-block;
   font-size: 16px;
 
-  color: var(--ion-color-medium-shade);
+  color: white;
 }
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+ion-split-pane {
+  --border: none !important;
+  ion-menu {
+    --background: var(--ion-color-primary) !important;
+    ion-content {
+      --background: $dark-blue;
+      // --background: var(--ion-color-primary) !important;
+      ion-list-header {
+        --background: $dark-blue;
+        //--background: var(--ion-color-primary) !important;
+        --color: white !important;
+      }
+      ion-item {
+        --background: $dark-blue;
+        //--background: var(--ion-color-primary) !important;
+        --color: white !important;
+        ion-icon {
+          padding-right: 10px !important;
+        }
+      }
+    }
+  }
+}
+.itemsBackground{
+  background-color: var(--ion-color-primary); 
+  color: white;
+}
+ion-icon{
+  color: #ffffff !important;
 }

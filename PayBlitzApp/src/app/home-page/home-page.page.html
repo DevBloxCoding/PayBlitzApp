@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title style="color: white;">Dashboard</ion-title>
+
+    <ion-buttons slot="end" style="color: white;">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header class="centered">
+      <ion-grid>
+        <ion-row class="screen-lg">
+          <ion-col size="3">
+            <div class="blob"></div>
+            <ion-label class="top-up-label">
+              Top-Up Wallet
+              <ion-icon size="large" name="add-circle-outline" class="top-up-wallet"></ion-icon>
+            </ion-label>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card-title class="bolded spaced-letter-2 font-size-50 text-color">R550</ion-card-title>
+          </ion-col>
+          <ion-col size="3"></ion-col>
+        </ion-row>
+
+        <ion-row class="screen-sm">
+          <ion-col size="12">
+            <div class="top-up-button-sm">
+              <ion-label class="top-up-label-sm">
+                Top-up Wallet <br>
+                <ion-icon size="large" name="cash-outline" class="top-up-wallet"></ion-icon>
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="screen-sm">
+          <ion-col size="12">
+            <ion-card-title class="bolded spaced-letter-2 font-size-50 text-color">R780</ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="screen-lg">
+        <br>
+        <br>
+      </div>
+    
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-button class="nav-buttons" (click)="transactionClick()">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-label class="font-size-12">Activity</ion-label>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col>
+                    <ion-icon size="large" name="list-circle-outline"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-button class="nav-buttons" (click)="payClick()">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-label class="font-size-12">Pay</ion-label>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col>
+                    <ion-icon size="large" name="wallet-outline"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-button class="nav-buttons" (click)="receiveClick()">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-label class="font-size-12">Receive</ion-label>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col>
+                    <ion-icon size="large" name="card-outline"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+  </ion-card>
+
+  <div class="element-container" *ngIf="transactionVis">
+    <app-transaction-records></app-transaction-records>
+  </div>
+
+  <div class="element-container" *ngIf="payVis">
+    <app-pay-money></app-pay-money>
+  </div>
+
+  <div class="element-container" *ngIf="receiveVis">
+    <app-receive-money></app-receive-money>
+  </div>
+</ion-content>

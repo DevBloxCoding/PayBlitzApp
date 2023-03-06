@@ -1,0 +1,34 @@
+@import './../../colors.scss';
+
+.transaction-header {
+    color: $dark-blue;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.paid-class {
+    height: 30px !important;
+    border-radius: 15px;
+    background-color: $pill-paid;
+    color: white;
+}
+
+.received-class {
+    height: 30px !important;
+    border-radius: 15px;
+    background-color: $pill-received;
+    color: white;
+}
+
+.redeemed-class {
+    height: 30px !important;
+    border-radius: 15px;
+    background-color: $pill-redeemed;
+    color: white;
+}
+
+.transaction-container{
+height: 480px;
+overflow-y: scroll;    
+}
